@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scraped Articles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+        }
+        .article {
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        .article h2, .article h3 {
+            unicode-bidi: embed;
+        }
+        .article img {
+            max-width: 100%;
+            height: auto;
+        }
+        .bidi {
+            unicode-bidi: plaintext;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onbeforeunload = function () {
+            navigator.sendBeacon('/shutdown');
+        };
+    </script>
+</head>
+<body>
+    <h1>Scraped Articles</h1>
+
+    {% for article in articles %}
+        <div class="article">
+            <h2 class="bidi">{{ article['header'] }}</h2>
+            <h3 class="bidi">{{ article['sub_header'] }}</h3>
+            
+            {% if article['author'] %}
+                <p>מאת: <span class="bidi">{{ article['author'] }}</span></p>
+            {% endif %}
+            
+            {% if article['image'] %}
+                <img src="{{ url_for('static', filename='images/' + article['image']['image_name']) }}" alt="{{ article['header'] }}">
+            {% endif %}
+        </div>
+    {% else %}
+        <p>No articles found.</p>
+    {% endfor %}
+</body>
+</html>

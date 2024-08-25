@@ -1,0 +1,42 @@
+# פרויקט סריקת חדשות והצגת תוכן
+
+## סקירה כללית
+פרויקט זה מאפשר סריקה אוטומטית של תוכן מאתר אינטרנט מסוים, שמירת הנתונים בפורמט JSON, והצגתם באמצעות אפליקציית Flask. הפרויקט משלב טכנולוגיות אוטומציה של גלישה, עיבוד נתונים ושירות אינטרנט.
+
+## תכונות עיקריות
+- סריקת אתרים אוטומטית באמצעות Selenium
+- אחסון תוכן בפורמט JSON
+- הצגת התוכן שנסרק באמצעות Flask
+- טיפול בטקסט המשלב עברית ואנגלית
+- הורדת ואחסון תמונות
+
+## טכנולוגיות בשימוש
+- Python
+- Flask
+- Selenium
+- chromedriver_autoinstaller
+- JSON
+
+## מבנה הפרויקט
+- `scrap.py`: לוגיקת הסריקה הראשית
+- `web.py`: אפליקציית Flask להצגת התוכן
+- `scrap_kit.py`: פונקציות עזר
+- `web_image.py`: עיבוד תמונות
+- `article.py`: ייצוג אובייקט מאמר
+- `home.html`: תבנית HTML להצגת התוכן
+- `static/images/`: תיקיה לתמונות שנסרקו
+
+## התקנה והגדרה
+1. Clone the repository:
+
+2. הגדרת סביבה וירטואלית
+	python -m venv venv
+	source venv/bin/activate  # במערכות Linux ו-MacOS	
+	venv\Scripts\activate  # במערכות Windows
+
+3. התקנת ספריות רלוונטיות
+	pip install -r requirements.txt
+
+4. הרצת פקודה במיקום הפרוייקט:
+	python3 web.py -m t או a # On Linux and MacOS
+	python web.py -m a או t # On Windows

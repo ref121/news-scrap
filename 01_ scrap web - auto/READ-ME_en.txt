@@ -1,0 +1,42 @@
+# Web Scraping and Content Display Project
+
+## Overview
+This project automates web scraping of content from a specific website, stores the data in JSON format, and displays it using a Flask web application. It combines web automation, data processing, and web serving technologies.
+
+## Features
+- Automated web scraping using Selenium
+- Content storage in JSON format
+- Web display of scraped content using Flask
+- Handling of mixed Hebrew-English text
+- Image downloading and storage
+
+## Technologies Used
+- Python
+- Flask
+- Selenium
+- chromedriver_autoinstaller
+- JSON
+
+## Project Structure
+- `scrap.py`: Main scraping logic
+- `web.py`: Flask application for displaying content
+- `scrap_kit.py`: Helper functions
+- `web_image.py`: Image processing
+- `article.py`: Article object representation
+- `home.html`: HTML template for content display
+- `static/images/`: Folder for scraped images
+
+## Setup and Installation
+1. Clone the repository:
+
+2. Set up a virtual environment:
+	python -m venv venv
+	source venv/bin/activate  # On Linux and MacOS
+	venv\Scripts\activate  # On Windows
+
+3. Install dependencies:
+	pip install -r requirements.txt
+
+4. run the process on a project location path using cmd / Terminal:
+	python3 web.py -m t or a # On Linux and MacOS
+	python web.py -m a or t # On Windows
